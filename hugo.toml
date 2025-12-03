@@ -1,0 +1,12 @@
+baseURL = 'localhost'
+languageCode = 'en-us'
+title = "My Minimal Blog"
+theme = "minima-bw"
+
+
+[params]
+description = "A minimal black-and-white blog powered by Hugo and minima-bw theme."
+
+
+[permalinks]
+posts = "/posts/:slug/"

@@ -3,23 +3,3 @@
 /resources/
 .hugo_build.lock
 
-# Binaries
-hugo*
-
-# Dependencies
-/node_modules/
-/yarn-error.log
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Temporary files
-*.tmp
-*.temp
-.DS_Store
