@@ -1,4 +1,5 @@
-baseURL = 'https://kexar007.github.io/customblog/'
+baseURL = "https://kexar007.github.io/customblog"
+
 languageCode = 'en-us'
 title = "My Minimal Blog"
 theme = "minima-bw"

@@ -1,7 +1,8 @@
 +++
 date = '2025-12-03T18:38:48+05:30'
-draft = true
+draft = false
 title = 'M Ed students workshop'
+summary: "M Ed students who came to teaching practice at our college"
 +++
 
 
