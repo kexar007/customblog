@@ -1,0 +1,11 @@
+<div class="gallery">
+    {{ range .Page.Resources.ByType "image" }}
+        {{ $filename := .Name }}
+        {{ $basename := path.BaseName .Name }}
+        {{ if and (ne (lower $basename) "featured") (not (strings.Contains (lower $filename) "non-gallery")) }}
+            {{ if or (eq .MediaType.SubType "jpeg") (eq .MediaType.SubType "png") (eq .MediaType.SubType "gif") (eq .MediaType.SubType "webp") (eq .MediaType.SubType "svg") }}
+                <img src="{{ .RelPermalink }}" alt="{{ .Name }}">
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</div>

@@ -8,20 +8,20 @@ img{max-width:100%;height:auto;display:block}
 
 
 :root{
---bg: #ffffff;
---fg: #000000;
---muted: #333333;
---accent: #000000;
+--bg: #f8f8f8;
+--fg: #1a1a1a;
+--muted: #555555;
+--accent: #0056b3;
 --max-width: 900px;
 --container-padding: 1rem;
 }
 
 
 [data-theme='dark']{
---bg: #000000;
---fg: #ffffff;
---muted: #cccccc;
---accent: #ffffff;
+--bg: #1a1a1a;
+--fg: #f8f8f8;
+--muted: #aaaaaa;
+--accent: #6eb7ff;
 }
 
 
