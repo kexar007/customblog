@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}" id="html-root">
+{{ partial "head.html" . }}
+<body>
+{{ partial "header.html" . }}
+
+
+<main class="site-main container">
+{{ block "main" . }}{{ end }}
+</main>
+
+
+{{ partial "footer.html" . }}
+
+
+{{ $themeJS := resources.Get "js/theme.js" | minify | fingerprint }}
+<script src="{{ $themeJS.RelPermalink }}" integrity="{{ $themeJS.Attributes.Integrity }}"></script>
+</body>
+</html>

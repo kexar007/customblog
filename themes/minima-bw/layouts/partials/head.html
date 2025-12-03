@@ -1,0 +1,19 @@
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+<meta name="description" content="{{ .Site.Params.description }}">
+
+
+<!-- main CSS + sectional CSS (kept separate as requested) -->
+{{ $styleCSS := resources.Get "css/style.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $styleCSS.RelPermalink }}" integrity="{{ $styleCSS.Attributes.Integrity }}">
+{{ $headerCSS := resources.Get "css/header.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $headerCSS.RelPermalink }}" integrity="{{ $headerCSS.Attributes.Integrity }}">
+{{ $homepageCSS := resources.Get "css/homepage.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $homepageCSS.RelPermalink }}" integrity="{{ $homepageCSS.Attributes.Integrity }}">
+{{ $postsCSS := resources.Get "css/posts.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $postsCSS.RelPermalink }}" integrity="{{ $postsCSS.Attributes.Integrity }}">
+{{ $footerCSS := resources.Get "css/footer.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $footerCSS.RelPermalink }}" integrity="{{ $footerCSS.Attributes.Integrity }}">
+</head>

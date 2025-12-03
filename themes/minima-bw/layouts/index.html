@@ -1,0 +1,24 @@
+{{ define "main" }}
+<section class="home-intro">
+<h1>{{ .Site.Title }}</h1>
+<p>{{ .Site.Params.description }}</p>
+</section>
+
+
+<section class="post-list" id="post-list">
+<ul>
+{{ range .Site.RegularPages.ByDate.Reverse }}
+<li class="post-item" data-title="{{ .Title | lower }}" data-summary="{{ .Summary | plainify | lower }}">
+<a href="{{ .RelPermalink }}">
+{{ with .Resources.GetMatch "featured.*" }}
+<img class="featured" src="{{ .RelPermalink }}" alt="Featured image for {{ $.Title }}">
+{{ end }}
+<h2>{{ .Title }}</h2>
+</a>
+<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+<p class="summary">{{ .Summary }}</p>
+</li>
+{{ end }}
+</ul>
+</section>
+{{ end }}

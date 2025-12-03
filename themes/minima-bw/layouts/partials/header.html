@@ -1,0 +1,20 @@
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+
+
+<nav class="site-nav" aria-label="Main navigation">
+<a href="{{ "/" | relURL }}">Home</a>
+<a href="{{ "/posts/" | relURL }}">Posts</a>
+</nav>
+
+
+<div class="header-controls">
+<input id="site-search" class="site-search" type="search" placeholder="Search posts" aria-label="Search posts">
+<button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">Toggle</button>
+</div>
+
+
+<button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.site-nav').classList.toggle('open')">≡</button>
+</div>
+</header>

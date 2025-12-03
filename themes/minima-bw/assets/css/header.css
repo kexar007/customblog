@@ -1,0 +1,17 @@
+/* header.css */
+.site-header{border-bottom:1px solid var(--muted);background:transparent}
+.header-inner{display:flex;align-items:center;gap:1rem;justify-content:space-between}
+.brand{font-weight:700;font-size:1.1rem}
+.site-nav{display:flex;gap:.75rem}
+.site-nav a{padding:.5rem}
+.site-nav.open{display:block}
+.header-controls{display:flex;align-items:center;gap:.5rem}
+.site-search{padding:.4rem;border:1px solid var(--muted);background:transparent;color:var(--fg)}
+.theme-toggle{padding:.4rem;border:1px solid var(--muted);background:transparent;color:var(--fg);cursor:pointer}
+.nav-toggle{display:none;border:none;background:transparent;font-size:1.2rem}
+
+
+@media (max-width:700px){
+.site-nav{display:none;position:absolute;top:64px;right:1rem;background:var(--bg);padding:.5rem;border:1px solid var(--muted)}
+.nav-toggle{display:block}
+}

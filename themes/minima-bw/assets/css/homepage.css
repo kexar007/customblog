@@ -1,0 +1,7 @@
+/* homepage.css */
+.home-intro{margin-bottom:1.5rem}
+.post-list ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.post-item{border:1px solid var(--muted);padding:1rem}
+.post-item h2{font-size:1.05rem;margin-bottom:.25rem}
+.post-item .summary{color:var(--muted);margin-top:.5rem}
+.post-item time{display:block;font-size:.85rem;color:var(--muted);margin-top:.25rem}

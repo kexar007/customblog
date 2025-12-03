@@ -1,0 +1,56 @@
+/* style.css — reset + variables + global typographic rules */
+
+
+/* Minimal reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+img{max-width:100%;height:auto;display:block}
+
+
+:root{
+--bg: #ffffff;
+--fg: #000000;
+--muted: #333333;
+--accent: #000000;
+--max-width: 900px;
+--container-padding: 1rem;
+}
+
+
+[data-theme='dark']{
+--bg: #000000;
+--fg: #ffffff;
+--muted: #cccccc;
+--accent: #ffffff;
+}
+
+
+body{
+background:var(--bg);
+color:var(--fg);
+font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+line-height:1.5;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+}
+
+
+.container{
+max-width:var(--max-width);
+margin:0 auto;
+padding:var(--container-padding);
+}
+
+
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+
+h1,h2,h3{line-height:1.15;margin:0 0 .5rem}
+
+
+.site-main{padding:2rem 0}
+
+
+/* small utility */
+.featured{display:block;width:100%;height:auto;margin-bottom:.5rem}

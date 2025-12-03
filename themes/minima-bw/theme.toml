@@ -1,0 +1,13 @@
+name = "minima-bw"
+license = "MIT"
+min_version = "0.80.0"
+description = "Minimal black-and-white Hugo theme with responsive layout and dark/light toggle."
+
+
+[author]
+name = "auto-generated"
+
+
+[params]
+# optional site params (you can override in site config)
+description = "A minimal black-and-white blog theme."

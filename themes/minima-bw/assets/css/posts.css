@@ -1,0 +1,5 @@
+/* posts.css */
+.post{padding:1rem;border:1px solid var(--muted)}
+.post-header{margin-bottom:1rem}
+.post-content{font-size:1rem}
+.post-content img{margin:1rem 0}
