@@ -1,0 +1,30 @@
+{{ if .Paginator }}
+  {{ if gt .Paginator.TotalPages 1 }}
+    <nav class="pagination" style="margin-top: 2rem; display: flex; justify-content: space-between;">
+      
+      {{/* Link to Newer Posts (Previous Page) */}}
+      {{ if .Paginator.HasPrev }}
+        <a class="previous" href="{{ .Paginator.Prev.URL }}">
+          &laquo; Newer Posts
+        </a>
+      {{ else }}
+        <span></span> {{/* Empty span to keep spacing correct if no newer posts */}}
+      {{ end }}
+
+      {{/* Current Page Number */}}
+      <span class="page-number">
+        Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
+      </span>
+
+      {{/* Link to Older Posts (Next Page) */}}
+      {{ if .Paginator.HasNext }}
+        <a class="next" href="{{ .Paginator.Next.URL }}">
+          Older Posts &raquo;
+        </a>
+      {{ else }}
+        <span></span>
+      {{ end }}
+
+    </nav>
+  {{ end }}
+{{ end }}
