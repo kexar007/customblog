@@ -1,19 +1,21 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-<section class="post-list" id="post-list">
-<ul>
-{{ range .Pages.ByDate.Reverse }}
-<li class="post-item" data-title="{{ .Title | lower }}" data-summary="{{ .Summary | plainify | lower }}">
-<a href="{{ .RelPermalink }}">
-{{ with .Resources.GetMatch "featured.*" }}
-<img class="featured" src="{{ .RelPermalink }}" alt="Featured image for {{ $.Title }}">
-{{ end }}
-<h2>{{ .Title }}</h2>
-</a>
-<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-<p class="summary">{{ .Summary }}</p>
-</li>
-{{ end }}
-</ul>
-</section>
+<div class="post-list-container">
+    {{ range .Paginator.Pages }}
+    <article class="post-list-item">
+        <a href="{{ .RelPermalink }}" class="post-list-image-link">
+            {{ with .Resources.GetMatch "featured.*" }}
+            <img src="{{ .RelPermalink }}" alt="Featured image for {{ .Title }}" class="post-list-featured-image">
+            {{ end }}
+        </a>
+        <div class="post-list-content">
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+            <p class="summary">{{ .Summary | truncate 150 }}</p>
+            <a href="{{ .RelPermalink }}" class="read-more">Read More</a>
+        </div>
+    </article>
+    {{ end }}
+</div>
+
+{{ partial "pagination.html" . }}
 {{ end }}

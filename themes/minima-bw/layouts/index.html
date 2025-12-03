@@ -6,19 +6,24 @@
 
 
 <section class="post-list" id="post-list">
-<ul>
+<div class="card-grid">
 {{ range .Site.RegularPages.ByDate.Reverse }}
-<li class="post-item" data-title="{{ .Title | lower }}" data-summary="{{ .Summary | plainify | lower }}">
+<div class="post-card" data-title="{{ .Title | lower }}" data-summary="{{ .Summary | plainify | lower }}">
 <a href="{{ .RelPermalink }}">
-{{ with .Resources.GetMatch "featured.*" }}
-<img class="featured" src="{{ .RelPermalink }}" alt="Featured image for {{ $.Title }}">
+{{ with (.Resources.GetMatch "featured.*") }}
+<img class="featured-image" src="{{ .RelPermalink }}" alt="Featured image for {{ $.Title }}">
 {{ end }}
+</a>
+<div class="card-body">
+<a href="{{ .RelPermalink }}">
 <h2>{{ .Title }}</h2>
 </a>
 <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-<p class="summary">{{ .Summary }}</p>
-</li>
+<p class="summary">{{ .Summary | truncate 120 }}</p>
+<a href="{{ .RelPermalink }}" class="read-more">Read More</a>
+</div>
+</div>
 {{ end }}
-</ul>
+</div>
 </section>
 {{ end }}

@@ -16,4 +16,6 @@
 <link rel="stylesheet" href="{{ $postsCSS.RelPermalink }}">
 {{ $footerCSS := resources.Get "css/footer.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $footerCSS.RelPermalink }}">
+{{ $postListCSS := resources.Get "css/post-list.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $postListCSS.RelPermalink }}">
 </head>
