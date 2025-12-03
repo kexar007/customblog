@@ -14,6 +14,6 @@
 
 
 {{ $themeJS := resources.Get "js/theme.js" | minify | fingerprint }}
-<script src="{{ $themeJS.RelPermalink }}" integrity="{{ $themeJS.Attributes.Integrity }}"></script>
+<script src="{{ $themeJS.RelPermalink }}"></script>
 </body>
 </html>
